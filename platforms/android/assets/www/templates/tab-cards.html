@@ -1,0 +1,13 @@
+<ion-view view-title="Tarjetas">
+  <ion-content class="padding" scroll="false">
+    <div class="card" style="height: 300px; display: flex; justify-content: center; align-items: center;" ng-click="swap();">
+      <div ng-if="in_question" class="item item-text-wrap" style="white-space: pre-line; padding: 10px; margin-top: -40px; text-align: center; font-size: x-large; font-weight: bold;">
+        {{ question.question }}
+      </div>
+      <div ng-if="!in_question" style="white-space: pre-line; padding: 10px; margin-top: -40px; text-align: center; font-size: large;" class="item item-text-wrap">
+        {{ question.answer }}
+      </div>
+    </div>
+    <button class="button button-block button-royal" ng-click="next()">Siguiente</button>
+  </ion-content>
+</ion-view>

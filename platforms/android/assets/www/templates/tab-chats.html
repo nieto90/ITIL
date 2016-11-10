@@ -1,0 +1,13 @@
+<ion-view view-title="Preguntas">
+  <ion-content class="padding">
+    <div class="card" ng-repeat="q in questions">
+      <div class="item item-text-wrap">
+        <h2 style="white-space: pre-line; padding-top: 0;"">{{q.question}}</h2>
+        <p style="white-space: pre-line; padding-top: 0;">{{q.answer}}</p>
+        <hr>
+        <p style="white-space: pre-line; padding-top: 0;">{{q.description}}</p>
+      </div>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" distance="1%"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>

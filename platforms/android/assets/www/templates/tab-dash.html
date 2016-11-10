@@ -1,0 +1,24 @@
+<ion-view view-title="Test">
+  <ion-content class="padding">
+    <div class="card">
+      <div class="item item-text-wrap" style="font-weight: bolder; white-space: pre-line; padding-top: 0;">
+        {{ question.question }}
+      </div>
+      <div ng-if="correct != null" style="background-color: palegreen; white-space: pre-line; padding-top: 0;" class="item item-text-wrap">
+        {{ question.answer }}
+      </div>
+      <div ng-if="correct != null && !correct" style="background-color: tomato; white-space: pre-line; padding-top: 0;" class="item item-text-wrap">
+        {{ myanswer }}
+      </div>
+      <div ng-if="correct != null" style="white-space: pre-line; padding-top: 0;" class="item item-text-wrap">
+        {{ question.description }}
+      </div>
+    </div>
+    <div ng-if="correct == null" class="card" ng-repeat="o in question.options" ng-click="answer('{{ o }}');">
+      <div style="{{ o == myanswer ? 'background-color: moccasin;' : ''}} white-space: pre-line; padding-top: 0;" class="item item-text-wrap">
+        {{ o }}
+      </div>
+    </div>
+    <button ng-if="correct != null" class="button button-block button-royal" ng-click="next()">Siguiente</button>
+  </ion-content>
+</ion-view>
